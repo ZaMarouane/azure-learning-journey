@@ -34,7 +34,6 @@ By the end of this journey, I will be able to:
 azure-learning-journey/
 │
 ├── README.md
-│
 ├── 01-foundations/
 ├── 02-networking/
 ├── 03-connectivity-hybrid/
@@ -47,7 +46,6 @@ azure-learning-journey/
 │
 ├── scripts/
 └── assets/
-
 
 Each folder represents a **learning phase**, focused on real-world Azure administration.
 
