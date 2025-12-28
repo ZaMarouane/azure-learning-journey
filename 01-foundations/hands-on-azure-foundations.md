@@ -36,22 +36,16 @@ az login
 
 1️⃣ Management Groups
 Azure Portal
-
 Go to All services → Management Groups
-
 Click Add Management Group
-
 Provide:
-
 ID: mg-foundations
-
 Display Name: Foundations MG
-
 Click Save
 
 ✅ Management Group created
 
-Azure CLI
+Azure CLI:
 # Create a management group
 az account management-group create \
   --name mg-foundations \
@@ -66,18 +60,13 @@ az account management-group list --output table
 Note: You cannot create new Azure subscriptions via CLI in a free account.
 Hands-on is limited to assigning existing subscriptions to Management Groups.
 
-Azure Portal
-
+Azure Portal:
 Open Management Group → mg-foundations
-
 Click Add subscription
-
 Select your subscription
-
 Click Save
 
-Azure CLI
-
+Azure CLI:
 # Assign subscription to management group
 az account management-group subscription add \
   --name mg-foundations \
@@ -90,22 +79,16 @@ az account management-group show \
 
 
 3️⃣ Resource Groups
-Azure Portal
-
+Azure Portal:
 Go to Resource Groups → + Create
-
 Select Subscription: <your subscription>
-
 Name: rg-foundations-portal
-
 Region: West Europe
-
 Click Review + Create → Create
 
+
 ✅ Resource Group created
-
-Azure CLI
-
+Azure CLI:
 # Create a resource group
 az group create \
   --name rg-foundations-cli \
@@ -116,24 +99,17 @@ az group list --output table
 
 
 4️⃣ RBAC (Assign Roles at Scope)
-Azure Portal
-
+Azure Portal:
 Open Resource Group → Access control (IAM)
-
 Click Add → Add role assignment
-
 Role: Reader
-
 Assign access to: User
-
 Select a user
-
 Click Review + assign
 
+
 ✅ Reader role assigned at RG level
-
-Azure CLI
-
+Azure CLI:
 # Assign Reader role at RG scope
 az role assignment create \
   --assignee user@example.com \
@@ -147,7 +123,7 @@ az role assignment list \
 
 
 5️⃣ Cleanup
-Azure CLI
+Azure CLI:
 # Delete resource group
 az group delete --name rg-foundations-cli --yes --no-wait
 
@@ -157,25 +133,15 @@ Delete rg-foundations-portal manually
 
 
 ⚠️ Notes & Best Practices
-
 Management Groups = hierarchy for governance
-
 Subscriptions = billing & isolation boundary
-
 Resource Groups = lifecycle container
-
 Assign RBAC roles at the least privilege scope
-
 Always clean up test resources to avoid costs
 
 ✅ Lab Complete
-
 Management Groups: ✅
-
 Subscription assignment: ✅
-
 Resource Groups: ✅
-
 RBAC hands-on: ✅
-
 Azure Portal & CLI: ✅
